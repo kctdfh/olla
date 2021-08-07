@@ -1,0 +1,149 @@
+@font-face {
+	font-family: 'HK Grotesk Regular';
+	font-style: normal;
+	font-weight: normal;
+	src: local('HK Grotesk Regular'), url('/build/assets/font/HKGrotesk-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'HK Grotesk Regular Legacy';
+	font-style: normal;
+	font-weight: normal;
+	src: local('HK Grotesk Regular Legacy'), url('/build/assets/font/HKGrotesk-RegularLegacy.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'HK Grotesk Italic';
+	font-style: normal;
+	font-weight: normal;
+	src: local('HK Grotesk Italic'), url('/build/assets/font/HKGrotesk-Italic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'HK Grotesk Legacy Italic';
+	font-style: normal;
+	font-weight: normal;
+	src: local('HK Grotesk Legacy Italic'), url('/build/assets/font/HKGrotesk-LegacyItalic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'HK Grotesk Light';
+	font-style: normal;
+	font-weight: normal;
+	src: local('HK Grotesk Light'), url('/build/assets/font/HKGrotesk-Light.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'HK Grotesk Light Legacy';
+	font-style: normal;
+	font-weight: normal;
+	src: local('HK Grotesk Light Legacy'), url('/build/assets/font/HKGrotesk-LightLegacy.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'HK Grotesk Light Italic';
+	font-style: normal;
+	font-weight: normal;
+	src: local('HK Grotesk Light Italic'), url('/build/assets/font/HKGrotesk-LightItalic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'HK Grotesk Light Legacy Italic';
+	font-style: normal;
+	font-weight: normal;
+	src: local('HK Grotesk Light Legacy Italic'), url('/build/assets/font/HKGrotesk-LightLegacyItalic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'HK Grotesk Medium';
+	font-style: normal;
+	font-weight: normal;
+	src: local('HK Grotesk Medium'), url('/build/assets/font/HKGrotesk-Medium.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'HK Grotesk Medium Legacy';
+	font-style: normal;
+	font-weight: normal;
+	src: local('HK Grotesk Medium Legacy'), url('/build/assets/font/HKGrotesk-MediumLegacy.woff') format('woff');
+}
+
+
+@font-face {
+	font-family: 'HK Grotesk Medium Italic';
+	font-style: normal;
+	font-weight: normal;
+	src: local('HK Grotesk Medium Italic'), url('/build/assets/font/HKGrotesk-MediumItalic.woff') format('woff');
+}
+
+
+@font-face {
+	font-family: 'HK Grotesk Medium Legacy Italic';
+	font-style: normal;
+	font-weight: normal;
+	src: local('HK Grotesk Medium Legacy Italic'), url('/build/assets/font/HKGrotesk-MediumLegacyItalic.woff') format('woff');
+}
+
+
+@font-face {
+	font-family: 'HK Grotesk SemiBold';
+	font-style: normal;
+	font-weight: normal;
+	src: local('HK Grotesk SemiBold'), url('/build/assets/font/HKGrotesk-SemiBold.woff') format('woff');
+}
+
+
+@font-face {
+	font-family: 'HK Grotesk SemiBold Legacy';
+	font-style: normal;
+	font-weight: normal;
+	src: local('HK Grotesk SemiBold Legacy'), url('/build/assets/font/HKGrotesk-SemiBoldLegacy.woff') format('woff');
+}
+
+
+@font-face {
+	font-family: 'HK Grotesk SemiBold Italic';
+	font-style: normal;
+	font-weight: normal;
+	src: local('HK Grotesk SemiBold Italic'), url('/build/assets/font/HKGrotesk-SemiBoldItalic.woff') format('woff');
+}
+
+
+@font-face {
+	font-family: 'HK Grotesk SemiBold Legacy Italic';
+	font-style: normal;
+	font-weight: normal;
+	src: local('HK Grotesk SemiBold Legacy Italic'), url('/build/assets/font/HKGrotesk-SemiBoldLegacyItalic.woff') format('woff');
+}
+
+
+@font-face {
+	font-family: 'HK Grotesk Bold';
+	font-style: normal;
+	font-weight: normal;
+	src: local('HK Grotesk Bold'), url('/build/assets/font/HKGrotesk-Bold.woff') format('woff');
+}
+
+
+@font-face {
+	font-family: 'HK Grotesk Bold Legacy';
+	font-style: normal;
+	font-weight: normal;
+	src: local('HK Grotesk Bold Legacy'), url('/build/assets/font/HKGrotesk-BoldLegacy.woff') format('woff');
+}
+
+
+@font-face {
+	font-family: 'HK Grotesk Bold Italic';
+	font-style: normal;
+	font-weight: normal;
+	src: local('HK Grotesk Bold Italic'), url('/build/assets/font/HKGrotesk-BoldItalic.woff') format('woff');
+}
+
+
+@font-face {
+	font-family: 'HK Grotesk Bold Legacy Italic';
+	font-style: normal;
+	font-weight: normal;
+	src: local('HK Grotesk Bold Legacy Italic'), url('/build/assets/font/HKGrotesk-BoldLegacyItalic.woff') format('woff');
+}

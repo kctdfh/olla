@@ -1,0 +1,45 @@
+{
+  "name": "olla",
+  "version": "1.0.0",
+  "private": false,
+  "author": "Khashayar",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "@storybook/addon-actions": "^6.3.0",
+    "@storybook/addon-essentials": "^6.3.0",
+    "@storybook/addon-links": "^6.3.0",
+    "@storybook/addon-svelte-csf": "^1.1.0",
+    "@storybook/svelte": "^6.3.0",
+    "autoprefixer": "^10.3.1",
+    "babel-loader": "^8.2.2",
+    "postcss": "^8.3.6",
+    "postcss-load-config": "^3.1.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-copy-assets": "^2.0.3",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.31.2",
+    "svelte-loader": "^2.13.6",
+    "svelte-preprocess": "^4.7.4",
+    "tailwindcss": "^2.2.7",
+    "cssnano": "^5.0.7",
+    "postcss-focus-visible": "^5.0.0",
+    "postcss-import": "^14.0.2",
+    "sirv-cli": "^1.0.0",
+    "tailwindcss-interaction-variants": "^5.0.0"
+  },
+  "dependencies": {
+    "@storybook/addon-postcss": "^2.0.0"
+  }
+}
