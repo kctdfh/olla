@@ -1,13 +1,15 @@
 <script>
   export let name;
+  import Button from "./stories/Button.svelte";
 </script>
 
-<main>
+<main class="dark">
   <h1>Hello {name}!</h1>
   <p class="font-bold underline">
     Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn
     how to build Svelte apps.
   </p>
+  <Button label="My button here" large="true" primary="true" />
 </main>
 
 <style global lang="postcss">

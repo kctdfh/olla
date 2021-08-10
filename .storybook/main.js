@@ -8,5 +8,6 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-svelte-csf",
     "@storybook/addon-postcss",
+    "storybook-addon-themes",
   ],
 };
