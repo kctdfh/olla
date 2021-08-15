@@ -17,13 +17,13 @@
     "@storybook/addon-actions": "^6.3.0",
     "@storybook/addon-essentials": "^6.3.0",
     "@storybook/addon-links": "^6.3.0",
-    "@storybook/addon-svelte-csf": "^1.1.0",
     "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/addon-svelte-csf": "^1.1.0",
     "@storybook/svelte": "^6.3.0",
-    "storybook-addon-themes": "^6.1.0",
     "autoprefixer": "^10.3.1",
     "babel-loader": "^8.2.2",
     "cssnano": "^5.0.7",
+    "jest": "^27.0.6",
     "postcss": "^8.3.6",
     "postcss-focus-visible": "^5.0.0",
     "postcss-import": "^14.0.2",
@@ -35,11 +35,12 @@
     "rollup-plugin-svelte": "^7.0.0",
     "rollup-plugin-terser": "^7.0.0",
     "sirv-cli": "^1.0.0",
+    "storybook-addon-themes": "^6.1.0",
     "svelte": "^3.31.2",
+    "svelte-feather-icons": "^3.5.0",
     "svelte-loader": "^2.13.6",
     "svelte-preprocess": "^4.7.4",
     "tailwindcss": "^2.2.7",
-    "tailwindcss-interaction-variants": "^5.0.0",
-    "jest": "^27.0.6"
+    "tailwindcss-interaction-variants": "^5.0.0"
   }
 }
