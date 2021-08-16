@@ -6,6 +6,7 @@ import { terser } from "rollup-plugin-terser";
 import css from "rollup-plugin-css-only";
 import copy from "rollup-plugin-copy-assets";
 import preprocess from "svelte-preprocess";
+import replace from "@rollup/plugin-replace";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -67,6 +68,10 @@ export default {
     resolve({
       browser: true,
       dedupe: ["svelte"],
+    }),
+    replace({
+      "process.env.NODE_ENV": JSON.stringify("production"),
+      include: "**/node_modules/**",
     }),
     commonjs(),
     copy({
