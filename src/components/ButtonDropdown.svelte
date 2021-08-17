@@ -1,7 +1,6 @@
 <script>
   import { ChevronDownIcon, HomeIcon, SlidersIcon } from "svelte-feather-icons";
   import Dropdown from "sv-bootstrap-dropdown";
-  export let type = "secondary";
   export let size = "small";
   export let icon = "none";
   export let label = "Dropdown";
@@ -10,6 +9,8 @@
 
   var iconLeft, iconCenter, iconSize, dropdownTrigger;
   var dropdownOpen = false;
+  var iconOnly = false;
+  var offset = [0, 4];
 
   var listLinkClasses =
     "text-black dark:text-white group-hover:text-blue-700 dark:group-hover:text-gray-300";
@@ -49,7 +50,7 @@
   function updateMenuClasses() {
     var newPlacement = placement.toLowerCase();
     var classList =
-      "overflow-hidden w-full border-box p-0 dark:bg-gray-900 bg-white flex flex-col border border-gray-300";
+      "overflow-hidden w-full border-box p-0 dark:bg-gray-900 bg-white flex flex-col border border-blue-700 dark:border-blue-500";
     if (newPlacement === "bottom-end") {
       classList += " rounded-tr-0 rounded-bl-md rounded-tl-md rounded-br-md";
     } else if (newPlacement === "bottom-start") {
@@ -65,10 +66,14 @@
   function updateMenuItemClasses(size) {
     var newSize = size.toLowerCase();
     var classList =
-      "h-full w-full bg-transparent hover:bg-blue-100 active:bg-blue-100 dark:hover:bg-blue-200 dark:active:bg-blue-300 focus:outline-none focus-visible:ring focus-visible:ring-blue-700 focus-visible:ring-opacity-50 group";
+      "m-0 h-full w-full bg-transparent" +
+      " hover:bg-blue-100" +
+      " dark:hover:bg-blue-800" +
+      " focus:outline-none focus-visible:ring focus-visible:ring-blue-700 focus-visible:ring-opacity-50" +
+      " group";
     if (newSize === "large") {
       classList += " text-base p-3";
-    } else if (newSize === "small") {
+    } else if (newSize === "small" || newSize === "medium") {
       classList += " text-sm p-2";
     }
     return classList;
@@ -77,10 +82,14 @@
   function updateMenuItemClassesDanger(size) {
     var newSize = size.toLowerCase();
     var classList =
-      "h-full w-full first:rounded-t-md last:rounded-b-md bg-transparent hover:bg-red-100 active:bg-red-100 dark:hover:bg-red-200 dark:active:bg-red-300 focus:outline-none focus-visible:ring focus-visible:ring-red-700 focus-visible:ring-opacity-50 group";
+      "m-0 h-full w-full bg-transparent" +
+      " hover:bg-red-100" +
+      " dark:hover:bg-red-800" +
+      " focus:outline-none focus-visible:ring focus-visible:ring-red-700 focus-visible:ring-opacity-50" +
+      " group";
     if (newSize === "large") {
       classList += " text-base p-3";
-    } else if (newSize === "small") {
+    } else if (newSize === "small" || newSize === "medium") {
       classList += " text-sm p-2";
     }
     return classList;
@@ -88,47 +97,52 @@
 
   function updateListClasses(size) {
     var newSize = size.toLowerCase();
-    var classList = "p-0 m-0 w-full rounded-md";
-    if (newSize === "large") {
-      classList += " space-y-3";
-    } else if (newSize === "small") {
-      classList += " space-y-2";
-    }
+    var classList = "p-0 m-0 w-full";
     return classList;
   }
 
   function updateSize(size) {
     var newSize = size.toLowerCase();
     if (newSize === "large") {
-      iconSize = "1.5x";
-      return "p-3";
+      iconSize = "22";
+      return "p-4";
     } else if (newSize === "small") {
       iconSize = "16";
       return "p-2";
+    } else if (newSize === "medium") {
+      iconSize = "18";
+      return "p-3";
     }
   }
 
-  function updateType(type) {
-    var newType = type.toLowerCase();
-    if (newType === "primary") {
-      return "justify-between dark:bg-blue-600 dark:border-blue-600 bg-blue-700 border-blue-700 text-white hover:bg-blue-600 active:bg-blue-800";
-    } else if (newType === "secondary") {
-      return "justify-start border-gray-300 border-solid dark:border-gray-700 dark:text-gray-300 text-blue-700 dark:bg-gray-900 bg-white hover:bg-blue-50 active:bg-blue-100 hover:border-blue-50 active:border-blue-100 focus-visible:ring focus-visible:ring-blue-700 focus-visible:ring-opacity-50 focus:outline-none";
+  function updateButton(dropdownOpen) {
+    var classList =
+      "border border-solid transition-colors ease duration-50 justify-start focus-visible:ring-opacity-50 focus:outline-none focus-visible:ring";
+    if (!dropdownOpen) {
+      classList +=
+        " text-blue-700 bg-white" +
+        " dark:text-gray-300 dark:bg-gray-900" +
+        " border-gray-300" +
+        " dark:border-gray-700" +
+        " hover:bg-blue-50 hover:border-blue-200 active:bg-blue-100 active:border-blue-300" +
+        " dark:hover:bg-blue-700 dark:hover:border-blue-800 dark:active:bg-blue-800 dark:active:border-blue-800" +
+        " focus-visible:ring-blue-700" +
+        " focus-visible:ring-blue-500 ";
+    } else {
+      classList +=
+        " text-blue-700 bg-blue-100" +
+        " dark:text-gray-300 dark:bg-gray-900" +
+        " border-blue-700" +
+        " dark:border-blue-500" +
+        " focus-visible:ring-blue-700" +
+        " focus-visible:ring-blue-500 ";
     }
+    return classList;
   }
 
   function updateIcons(icon) {
     var newIcon = icon.toLowerCase();
-    var newType = type.toLowerCase();
-    var classList;
-
-    function setType() {
-      if (newType === "primary") {
-        classList = "text-white";
-      } else if (newType === "secondary") {
-        classList = "dark:text-gray-300 text-blue-700";
-      }
-    }
+    var classList = "dark:text-gray-300 text-blue-700";
 
     if (newIcon === "left") {
       iconCenter = false;
@@ -142,26 +156,42 @@
     } else if (newIcon === "all") {
       iconCenter = true;
       iconLeft = true;
+    } else if (newIcon === "only") {
+      iconCenter = false;
+      iconLeft = false;
+      iconOnly = true;
     }
 
-    setType();
     return classList;
   }
 
   function updateLabel(label) {
     var newSize = size.toLowerCase();
+    var classList = "";
     if (newSize === "large") {
-      return "m-0 text-base py-2 px-3 flex-grow flex-shrink-0";
+      classList +=
+        "m-0 leading-[20px] h-[22px] text-base align-middle flex-grow flex-shrink-0";
+    } else if (newSize === "medium") {
+      classList +=
+        "m-0 leading-[16px] h-[18px] text-sm align-middle flex-grow flex-shrink-0";
     } else if (newSize === "small") {
-      return "m-0 text-xs tracking-wide flex-grow flex-shrink-0";
-    }
+      classList +=
+        "m-0 leading-[17px] h-[16px] text-xs align-middle flex-grow flex-shrink-0";
+    } /* 
+    if (
+      ((iconLeft && iconRight) || iconAll) &&
+      (newSize === "large" || newSize === "medium")
+    ) {
+      classList += " mx-2";
+    } */
+    return classList;
   }
 
   let commonClasses =
     "p-2 inline-flex items-center border text-center font-semibold";
 
   $: radiusClasses = updateButtonRadius(dropdownOpen);
-  $: typeClasses = updateType(type);
+  $: buttonClasses = updateButton(dropdownOpen);
   $: sizeClasses = updateSize(size);
   $: iconColorClasses = updateIcons(icon);
   $: labelClasses = updateLabel(label);
@@ -182,13 +212,14 @@
 <Dropdown
   triggerElement={dropdownTrigger}
   {placement}
+  {offset}
   onOpened={dropdownOpened}
   onClosed={dropdownClosed}
 >
   <button
     type="button"
     bind:this={dropdownTrigger}
-    class="{commonClasses} {typeClasses} {sizeClasses} {radiusClasses}"
+    class="{commonClasses} {buttonClasses} {sizeClasses} {radiusClasses}"
   >
     {#if iconLeft && !iconCenter}
       <SlidersIcon
@@ -197,7 +228,7 @@
       />
     {/if}
 
-    {#if iconCenter}
+    {#if iconCenter || iconOnly}
       <HomeIcon
         class="stroke-current flex-none {iconColorClasses}"
         size={iconSize}
@@ -206,10 +237,12 @@
       <p class={labelClasses}>{label}</p>
     {/if}
 
-    <ChevronDownIcon
-      class="stroke-current ml-2 {iconColorClasses}"
-      size={iconSize}
-    />
+    {#if !iconOnly}
+      <ChevronDownIcon
+        class="stroke-current ml-2 {iconColorClasses}"
+        size={iconSize}
+      />
+    {/if}
   </button>
   <div slot="DropdownMenu" class={myMenuClasses}>
     <ul class={myMenuItemList}>

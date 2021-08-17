@@ -8,13 +8,13 @@
   component={Button}
   argTypes={{
     type: {
-      options: ["Primary", "Secondary"],
+      options: ["Primary", "Secondary", "Warning"],
       control: {
         type: "select",
       },
     },
     size: {
-      options: ["Large", "Small"],
+      options: ["Large", "Small", "Medium"],
       control: {
         type: "select",
       },

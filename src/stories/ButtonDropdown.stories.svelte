@@ -7,20 +7,14 @@
   title="Inputs/Dropdown"
   component={ButtonDropdown}
   argTypes={{
-    type: {
-      options: ["Primary", "Secondary"],
-      control: {
-        type: "select",
-      },
-    },
     size: {
-      options: ["Large", "Small"],
+      options: ["Large", "Medium", "Small"],
       control: {
         type: "select",
       },
     },
     icon: {
-      options: ["None", "Left", "Center"],
+      options: ["None", "Left", "Center", "Only"],
       control: {
         type: "select",
       },
@@ -42,7 +36,6 @@
   name="Button"
   args={{
     label: "Dropdown",
-    type: "Secondary",
     size: "Small",
     icon: "None",
     placement: "bottom-start",
